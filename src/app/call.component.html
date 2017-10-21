@@ -1,3 +1,4 @@
 <div *ngIf="call">
-  <h1>call comp {{ call.year }}</h1>
+  <a *ngIf="call.homepage" href="{{ call.homepage }}">{{ call.homepage }}</a>
+  <call-important-dates [call]="call"></call-important-dates>
 </div>

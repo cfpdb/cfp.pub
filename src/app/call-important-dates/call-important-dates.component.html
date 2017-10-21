@@ -1,0 +1,9 @@
+<h2>Important Dates</h2>
+<ul>
+  <li *ngIf="call.deadlines.abstract">
+    Abstract: {{ call.deadlines.abstract | date:'yMMMd' }}</li>
+  <li *ngIf="call.deadlines.paper">
+    Full paper: {{ call.deadlines.paper | date:'yMMMd' }}</li>
+  <li *ngIf="call.deadlines.notification">
+    Notification: {{ call.deadlines.notification | date:'yMMMd' }}</li>
+</ul>
