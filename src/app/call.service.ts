@@ -20,7 +20,7 @@ export class CallService {
   //}
 
   getCall(call: string, year: number): Promise<Call> {
-    const url = `api/${call}/${year}.json`;
+    const url = `api/${call}/${year}`;
     return this.http.get(url)
     .toPromise()
     .then(response => response.json() as Call)
