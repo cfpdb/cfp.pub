@@ -14,4 +14,5 @@ class Deadlines {
 export class Call {
   year: number;
   location: Location;
+  deadlines: Deadlines;
 }

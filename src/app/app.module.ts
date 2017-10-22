@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { CallComponent } from './call.component';
 import { CallService } from './call.service';
 import { CallImportantDatesComponent } from './call-important-dates/call-important-dates.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CallComponent,
-    CallImportantDatesComponent
+    CallImportantDatesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
