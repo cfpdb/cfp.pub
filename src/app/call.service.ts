@@ -4,6 +4,7 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Call } from './call';
+import { Target } from './target';
 
 @Injectable()
 export class CallService {
@@ -19,8 +20,32 @@ export class CallService {
   //	.catch(this.handleError);
   //}
 
-  getCall(call: string, year: number): Promise<Call> {
-    const url = `api/${call}/${year}`;
+  getTargets(): Promise<Target[]> {
+    const url = 'api/targets'
+    return this.http.get(url)
+    .toPromise()
+    .then(response => response.json() as Target[])
+    .catch(this.handleError);
+  }
+
+  getTarget(target: string): Promise<Target> {
+    const url = `api/targets/${target}/`;
+    return this.http.get(url)
+    .toPromise()
+    .then(response => response.json() as Target)
+    .catch(this.handleError);
+  }
+
+  getCalls(target: string): Promise<Call[]> {
+    const url = `api/targets/${target}/calls`;
+    return this.http.get(url)
+    .toPromise()
+    .then(response => response.json() as Call[])
+    .catch(this.handleError);
+  }
+
+  getCall(target: string, year: number): Promise<Call> {
+    const url = `api/targets/${target}/${year}`;
     return this.http.get(url)
     .toPromise()
     .then(response => response.json() as Call)

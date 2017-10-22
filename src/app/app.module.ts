@@ -9,13 +9,15 @@ import { CallComponent } from './call.component';
 import { CallService } from './call.service';
 import { CallImportantDatesComponent } from './call-important-dates/call-important-dates.component';
 import { HomeComponent } from './home/home.component';
+import { TargetDetailComponent } from './target-detail/target-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CallComponent,
     CallImportantDatesComponent,
-    HomeComponent
+    HomeComponent,
+    TargetDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+<div *ngIf="target">
+  <h2>{{ target.shortname }}</h2>
+</div>
+
+<div *ngIf="calls">
+  <ul>
+    <li *ngFor="let call of calls">
+      <a routerLink="/{{ target.shortname }}/{{ call.year }}" routerLinkActive="active">
+        {{ call.year }}
+      </a>
+    </li>
+  </ul>
+</div>
