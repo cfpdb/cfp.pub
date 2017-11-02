@@ -5,10 +5,23 @@ class Location {
   venue: string;
 }
 
+class Dates {
+  dates: Date[];
+}
+
+class DateSet {
+  abstract: Dates;
+  submit: Dates;
+  notification: Dates;
+  rebuttal: Dates;
+}
+
 class Deadlines {
-  abstract: Date;
-  paper: Date;
-  notification: Date;
+  paper: DateSet;
+  poster: DateSet;
+  workshop: DateSet;
+  tutorial: DateSet;
+  wip: DateSet;
 }
 
 export class Call {
