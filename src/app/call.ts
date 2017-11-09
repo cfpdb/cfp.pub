@@ -17,7 +17,7 @@ class DateSet {
 }
 
 class Deadlines {
-  paper: DateSet;
+  paper: DateSet[];
   poster: DateSet;
   workshop: DateSet;
   tutorial: DateSet;
