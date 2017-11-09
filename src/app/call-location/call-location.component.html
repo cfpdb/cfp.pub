@@ -1,0 +1,14 @@
+<h2>Location</h2>
+
+<h3>{{ location.formatForMapsAPI() }}</h3>
+
+<ngui-map
+  center="{{ location.formatForMapsAPI() }}"
+  [fullscreenControl]="false"
+  zoom="8"
+  >
+</ngui-map>
+
+<pre>
+{{ location | json }}
+</pre>

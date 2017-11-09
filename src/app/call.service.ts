@@ -48,7 +48,7 @@ export class CallService {
     const url = `api/targets/${target}/${year}`;
     return this.http.get(url)
     .toPromise()
-    .then(response => response.json() as Call)
+    .then(response => new Call().deserialize(response.json()))
     .catch(this.handleError);
   }
 
