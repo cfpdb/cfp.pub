@@ -1,5 +1,13 @@
 <div *ngIf="call">
   <a *ngIf="call.homepage" href="{{ call.homepage }}">{{ call.homepage }}</a>
-  <call-important-dates [call]="call"></call-important-dates>
   <call-location [location]="call.location"></call-location>
+  <div *ngIf="call.topics">
+    <h2>Topics</h2>
+    <ul>
+      <li *ngFor="let topic of call.topics">
+        {{ topic }}
+      </li>
+    </ul>
+  </div>
+  <call-important-dates [call]="call"></call-important-dates>
 </div>
