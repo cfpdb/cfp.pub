@@ -1,0 +1,9 @@
+<h2>People</h2>
+<div *ngFor="let group of people">
+  <h3>{{ group.name }}</h3>
+  <ul>
+    <li *ngFor="let person of group.persons">
+      {{ person.name}} ({{ person.affiliation }})
+    </li>
+  </ul>
+</div>

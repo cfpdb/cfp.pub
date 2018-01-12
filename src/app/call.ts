@@ -47,17 +47,24 @@ class Person {
   affiliation: String;
 }
 
+export class People {
+  name: String;
+  persons: Person[];
+}
+
 export class Call implements Serializable<Call> {
   year: number;
   location: CallLocation;
   deadlines: Deadlines;
   topics: String[];
 
+  people: People[];
+
   deserialize(input) {
     this.year = input.year;
     this.location = new CallLocation().deserialize(input.location);
     this.deadlines = input.deadlines;
-    console.log(input.people)
+    this.people = input.people;
     if (input.topics) {
       this.topics = input.topics
     }

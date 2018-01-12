@@ -13,6 +13,7 @@ import { CallImportantDatesComponent } from './call-important-dates/call-importa
 import { HomeComponent } from './home/home.component';
 import { TargetDetailComponent } from './target-detail/target-detail.component';
 import { CallLocationComponent } from './call-location/call-location.component';
+import { CallPeopleComponent } from './call-people/call-people.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CallLocationComponent } from './call-location/call-location.component';
     CallImportantDatesComponent,
     HomeComponent,
     TargetDetailComponent,
-    CallLocationComponent
+    CallLocationComponent,
+    CallPeopleComponent
   ],
   imports: [
     BrowserModule,
