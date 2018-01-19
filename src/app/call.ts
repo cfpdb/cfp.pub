@@ -59,12 +59,14 @@ export class Call implements Serializable<Call> {
   topics: String[];
 
   people: People[];
+  source_path: String;
 
   deserialize(input) {
     this.year = input.year;
     this.location = new CallLocation().deserialize(input.location);
     this.deadlines = input.deadlines;
     this.people = input.people;
+    this.source_path = input.source_path;
     if (input.topics) {
       this.topics = input.topics
     }
