@@ -1,5 +1,5 @@
 <div *ngIf="call">
-  <a href="https://github.com/cfpdb/cfpdb/blob/master/{{ call.source_path }}">Edit this page</a><br/>
+  <p><a href="https://github.com/cfpdb/cfpdb/blob/master/{{ call.source_path }}">Edit this page</a></p>
   <a *ngIf="call.homepage" href="{{ call.homepage }}">{{ call.homepage }}</a>
   <call-location [location]="call.location"></call-location>
   <div *ngIf="call.topics">
