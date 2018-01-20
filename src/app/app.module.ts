@@ -33,7 +33,7 @@ import { CallPeopleComponent } from './call-people/call-people.component';
     HttpModule,
     AppRoutingModule,
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
-    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyC_n5ONKh56EAUHKCPhdou5qcxZLY-s17M'})
+    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyBm82LLA1y0eai-5ZrQGEFD27lxOxUgU54'})
   ],
   providers: [CallService],
   bootstrap: [AppComponent]

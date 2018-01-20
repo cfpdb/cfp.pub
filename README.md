@@ -1,3 +1,4 @@
-firebase login
-firebase init
+```bash
+npm run build
 firebase deploy
+```
