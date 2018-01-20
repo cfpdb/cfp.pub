@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
 import { NguiMapModule} from '@ngui/map';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +32,7 @@ import { CallPeopleComponent } from './call-people/call-people.component';
     BrowserModule,
     HttpModule,
     AppRoutingModule,
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyC_n5ONKh56EAUHKCPhdou5qcxZLY-s17M'})
   ],
   providers: [CallService],
