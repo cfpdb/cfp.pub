@@ -1,5 +1,6 @@
 import { Injectable }    from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { environment } from '../environments/environment';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -13,15 +14,16 @@ export class CallService {
 
   constructor(private http: Http) { }
 
-  //getHeroes(): Promise<Hero[]> {
-  //	return this.http.get(this.heroesUrl)
-  //	.toPromise()
-  //	.then(response => response.json().data as Hero[])
-  //	.catch(this.handleError);
-  //}
+  getApiUrl(prefix: string, path: string): string {
+    if (environment.production) {
+      return `${environment.api_url}/${path}?key=${environment.api_key}`;
+    } else {
+      return `${prefix}/${path}`
+    }
+  }
 
   getTargets(): Promise<Target[]> {
-    const url = 'api/targets'
+    const url = this.getApiUrl('api', 'targets');
     return this.http.get(url)
     .toPromise()
     .then(response => response.json() as Target[])
@@ -29,7 +31,7 @@ export class CallService {
   }
 
   getTarget(target: string): Promise<Target> {
-    const url = `api/targets/${target}/`;
+    const url = this.getApiUrl('api', `targets/${target}/`);
     return this.http.get(url)
     .toPromise()
     .then(response => response.json() as Target)
@@ -37,7 +39,7 @@ export class CallService {
   }
 
   getCalls(target: string): Promise<Call[]> {
-    const url = `api/targets/${target}/calls`;
+    const url = this.getApiUrl('api', `targets/${target}/calls`);
     return this.http.get(url)
     .toPromise()
     .then(response => response.json() as Call[])
@@ -45,7 +47,7 @@ export class CallService {
   }
 
   getCall(target: string, year: number): Promise<Call> {
-    const url = `api/targets/${target}/${year}`;
+    const url = this.getApiUrl('api', `targets/${target}/${year}`);
     return this.http.get(url)
     .toPromise()
     .then(response => new Call().deserialize(response.json()))
