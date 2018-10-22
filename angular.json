@@ -57,7 +57,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cfp-pub:build"
+            "browserTarget": "cfp-pub:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {

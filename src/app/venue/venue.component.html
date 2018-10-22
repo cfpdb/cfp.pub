@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let call of calls">
+    <a routerLink="/{{ call.venue }}/{{ call.year }}">{{ call.year }}</a>
+  </li>
+</ul>
